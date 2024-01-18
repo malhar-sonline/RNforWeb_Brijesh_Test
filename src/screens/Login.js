@@ -42,7 +42,14 @@ const LoginScreen = ({ navigation }) => {
        * Handle success response here 
        * Navigate screen after successfully login
        * */
-        navigation.navigate('Home');
+         if(res.success == true)
+        {
+          navigation.navigate('Home');
+        }
+        else
+        {
+          alert('Username or Password is not correct');
+        }
       })
       .catch(err => {
         /**
